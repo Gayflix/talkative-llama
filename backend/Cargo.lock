@@ -820,4 +820,20 @@ dependencies = [
 [[package]]
 name = "errno-dragonfly"
 version = "0.1.2"
-source = "registry+https://github.com/rust-lang/
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "aa68f1b12764fab894d2755d2518754e71b4fd80ecfb822714a1206c2aab39bf"
+dependencies = [
+ "cc",
+ "libc",
+]
+
+[[package]]
+name = "esaxx-rs"
+version = "0.1.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1f748b253ceca9fed5f42f8b5ceb3851e93102199bc25b64b65369f76e5c0a35"
+
+[[package]]
+name = "fastrand"
+version = "2.0.0"
+source = "registry
