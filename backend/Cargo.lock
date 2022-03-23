@@ -961,4 +961,23 @@ dependencies = [
 
 [[package]]
 name = "getrandom"
-v
+version = "0.2.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "be4136b2a15dd319360be1c07d9933517ccf0be8f16bf62a3bee4f0d618df427"
+dependencies = [
+ "cfg-if",
+ "libc",
+ "wasi",
+]
+
+[[package]]
+name = "ggml"
+version = "0.2.0-dev"
+source = "git+https://github.com/rustformers/llm.git?branch=main#2f6ffd4435799ceaa1d1bcb5a8790e5b3e0c5663"
+dependencies = [
+ "ggml-sys",
+ "memmap2",
+ "thiserror",
+]
+
+[[package
