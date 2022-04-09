@@ -1321,4 +1321,21 @@ dependencies = [
 [[package]]
 name = "llm-gptneox"
 version = "0.2.0-dev"
-source = "git+https://github.com/
+source = "git+https://github.com/rustformers/llm.git?branch=main#2f6ffd4435799ceaa1d1bcb5a8790e5b3e0c5663"
+dependencies = [
+ "llm-base",
+]
+
+[[package]]
+name = "llm-llama"
+version = "0.2.0-dev"
+source = "git+https://github.com/rustformers/llm.git?branch=main#2f6ffd4435799ceaa1d1bcb5a8790e5b3e0c5663"
+dependencies = [
+ "llm-base",
+ "tracing",
+]
+
+[[package]]
+name = "llm-mpt"
+version = "0.2.0-dev"
+source = "git+https://github.com/rustformers/llm.git?br
