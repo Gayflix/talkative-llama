@@ -49,4 +49,12 @@ pub async fn ws(
                         Ok(Ok(result)) => {
                             log::info!("Finished inference!");
                             let bot_response = format!("{result:?}");
-                            
+                            let bot_response =
+                                bot_response.trim_start_matches('"').trim_end_matches('"');
+                            if session.text(bot_response).await.is_err() {
+                                return;
+                            }
+                        }
+                        Ok(Err(e)) => {
+                            log::error!("Error during inference: {:?}", e);
+                            // Handle this
