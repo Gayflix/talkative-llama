@@ -19,4 +19,16 @@ pub async fn ws(
     actix_rt::spawn(async move {
         println!("Preparing inference model...");
         let inference_session: InferenceSession =
-            web::block(move || session_setup(model)).awa
+            web::block(move || session_setup(model)).await.unwrap();
+
+        let inference_session = Arc::new(std::sync::Mutex::new(inference_session));
+        println!("Initialized inference session.");
+
+        while let Some(Ok(msg)) = msg_stream.next().await {
+            match msg {
+                Message::Ping(bytes) => {
+                    if session.pong(&bytes).await.is_err() {
+                        return;
+                    }
+                }
+                Message::T
