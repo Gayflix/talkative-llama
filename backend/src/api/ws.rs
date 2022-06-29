@@ -9,4 +9,14 @@ use tokio_stream::StreamExt;
 pub async fn ws(
     req: HttpRequest,
     body: web::Payload,
-    mod
+    model: web::Data<Arc<Llama>>,
+) -> Result<HttpResponse, Error> {
+    let (response, mut session, mut msg_stream) = actix_ws::handle(&req, body)?;
+    let model = model.as_ref().clone();
+    let model_clone = model.clone();
+
+    println!("Started websocket connection...");
+    actix_rt::spawn(async move {
+        println!("Preparing inference model...");
+        let inference_session: InferenceSession =
+            web::block(move || session_setup(model)).awa
