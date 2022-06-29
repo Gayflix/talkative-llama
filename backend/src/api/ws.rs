@@ -39,4 +39,14 @@ pub async fn ws(
                     let inference_result = timeout(
                         Duration::from_secs(40),
                         web::block(move || {
-                            let mut locked_session = session_clone.lo
+                            let mut locked_session = session_clone.lock().unwrap();
+                            run_inference(&model_for_this_iteration, &mut *locked_session, &text)
+                        }),
+                    )
+                    .await;
+
+                    match inference_result {
+                        Ok(Ok(result)) => {
+                            log::info!("Finished inference!");
+                            let bot_response = format!("{result:?}");
+                            
