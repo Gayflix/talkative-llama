@@ -57,4 +57,12 @@ pub async fn ws(
                         }
                         Ok(Err(e)) => {
                             log::error!("Error during inference: {:?}", e);
-                            // Handle this
+                            // Handle this error according to your needs
+                            return;
+                        }
+                        Err(_) => {
+                            log::error!("Request timed out after 40 seconds.");
+                            // Handle timeout error, for example by sending a timeout message to the client
+                            if session
+                                .text("Request timed out after 40 seconds... Try again!")
+                                .await
