@@ -78,4 +78,14 @@ pub async fn ws(
                     // Do cleanup if needed
                     break;
                 }
-                _ 
+                _ => break,
+            }
+        }
+
+        let _ = session.close(None).await;
+        println!("Disconnecting websocket!");
+    });
+
+    println!("Started websocket connection...");
+    Ok(response)
+}

@@ -1,0 +1,6 @@
+FROM rust:1.71-slim-buster
+
+# Set the working directory
+WORKDIR /usr/src/backend
+
+# Install ne
