@@ -31,4 +31,12 @@ pub async fn ws(
                         return;
                     }
                 }
-                Message::T
+                Message::Text(text) => {
+                    let model_for_this_iteration = model_clone.clone();
+                    let session_clone = inference_session.clone();
+
+                    log::info!("Running inference...");
+                    let inference_result = timeout(
+                        Duration::from_secs(40),
+                        web::block(move || {
+                            let mut locked_session = session_clone.lo
