@@ -66,3 +66,16 @@ pub async fn ws(
                             if session
                                 .text("Request timed out after 40 seconds... Try again!")
                                 .await
+                                .is_err()
+                            {
+                                return;
+                            }
+                        }
+                    }
+                }
+                Message::Close(_) => {
+                    log::info!("Client requested close. Cleaning up.");
+                    // Do cleanup if needed
+                    break;
+                }
+                _ 
