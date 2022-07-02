@@ -1,0 +1,17 @@
+version: "3"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.frontend
+    networks:
+      - caddy-network
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    volumes:
+      - ./backend/models/llama-2-7b-chat.ggmlv3.q2_K.bin:/usr/src/backend/models/llama-2-7b-cha
