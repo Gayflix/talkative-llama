@@ -22,4 +22,16 @@ function App() {
   const [ws, setWs] = useState(null);
 
   useEffect(() => {
-    const createWebSocketConnecti
+    const createWebSocketConnection = (port) => {
+      const wsURL = `ws://localhost:${port}/ws/`;
+      console.log("Attempting connection to: ", wsURL);
+      const websocket = new WebSocket(wsURL);
+
+      websocket.onopen = () => {
+        console.log("Connected to the WebSocket server on port", port);
+        setWs(websocket);
+      };
+
+      websocket.onerror = (error) => {
+        console.log(`WebSocket Error on port ${port}:`, error);
+        // If co
