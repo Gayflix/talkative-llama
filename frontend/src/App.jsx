@@ -34,4 +34,18 @@ function App() {
 
       websocket.onerror = (error) => {
         console.log(`WebSocket Error on port ${port}:`, error);
-        // If co
+        // If connection fails on port 80, try connecting on port 8080
+        if (port === 80) {
+          console.log("Attempting to connect on port 8080...");
+          createWebSocketConnection(8080);
+        }
+      };
+
+      websocket.onmessage = (event) => {
+        const botResponse = event.data; // Assuming server sends raw string as response
+
+        setMessages((prev) => [
+          ...prev,
+          {
+            message: botResponse,
+            sender: "Cha
