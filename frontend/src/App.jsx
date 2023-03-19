@@ -86,4 +86,14 @@ function App() {
           <ChatContainer>
             <MessageList
               scrollBehavior="smooth"
-      
+              typingIndicator={
+                isTyping ? (
+                  <TypingIndicator content="Chatty Llama is typing" />
+                ) : null
+              }
+            >
+              {messages.map((message, i) => {
+                return <Message key={i} model={message} />;
+              })}
+            </MessageList>
+            <MessageInput placeholder="Type message here" onSend={handleSend} />
