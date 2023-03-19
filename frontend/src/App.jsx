@@ -48,4 +48,27 @@ function App() {
           ...prev,
           {
             message: botResponse,
-            sender: "Cha
+            sender: "ChattyLlama",
+          },
+        ]);
+        setIsTyping(false);
+      };
+
+      return websocket;
+    };
+
+    const wsInstance = createWebSocketConnection(80); // Start with port 80
+
+    return () => {
+      if (wsInstance) wsInstance.close();
+    };
+  }, []);
+
+  const handleSend = (message) => {
+    const newMessage = {
+      message,
+      direction: "outgoing",
+      sender: "user",
+    };
+
+    setMessages((prev) => [...prev, newMessa
