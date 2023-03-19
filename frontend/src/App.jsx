@@ -71,4 +71,19 @@ function App() {
       sender: "user",
     };
 
-    setMessages((prev) => [...prev, newMessa
+    setMessages((prev) => [...prev, newMessage]);
+
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      ws.send(message);
+      setIsTyping(true); // Assume bot is typing after we send a message.
+    }
+  };
+
+  return (
+    <div className="App app-background">
+      <div style={{ position: "relative", height: "800px", width: "700px" }}>
+        <MainContainer>
+          <ChatContainer>
+            <MessageList
+              scrollBehavior="smooth"
+      
