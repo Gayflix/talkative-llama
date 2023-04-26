@@ -10,4 +10,7 @@
 <p align=\"center\">
     <a href=\"https://rust-lang.github.io/rfcs/2495-min-rust-version.html\"><img src=\"https://img.shields.io/badge/rustc-1.60+-blue.svg\" alt=\"minimum rustc 1.60\"></a>
     <a href=\"https://GitHub.com/Gayflix/talkative-llama/graphs/commit-activity\"><img src=\"https://img.shields.io/badge/Maintained%3F-yes-green.svg\" alt=\"Maintenance\"></a>
-    <a href=\"https://GitHub.com/Gayflix/talkative-llama/pulls\"><img src=\"https://img.shields.io/github/issues-pr/Gayflix/talkative-llama.svg\" alt
+    <a href=\"https://GitHub.com/Gayflix/talkative-llama/pulls\"><img src=\"https://img.shields.io/github/issues-pr/Gayflix/talkative-llama.svg\" alt=\"GitHub pull-requests\"></a>
+    <a href=\"https://GitHub.com/Gayflix/talkative-llama/pulls\"><img src=\"https://img.shields.io/github/issues-pr-closed/Gayflix/talkative-llama.svg\" alt=\"GitHub pull-requests closed\"></a>
+    <img src=\"https://views.whatilearened.today/views/github/Gayflix/talkative-llama.svg\" alt=\"ViewCount\">
+    <a href=\"https://opensource.org/licenses/MIT\"><img src=\"https://img.shields.io/badge/License-
