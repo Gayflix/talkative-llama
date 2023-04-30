@@ -34,4 +34,24 @@ Create a huggingface token: https://huggingface.co/settings/tokens
 $ export HF_TOKEN=<your-token-here>
 ```
 
-#### 3. Download the [Llama-2-7B-Chat-GGML](https://huggingface.co/TheBloke/Llama-2-7B-
+#### 3. Download the [Llama-2-7B-Chat-GGML](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML) model
+
+```sh
+$ make download-model
+```
+
+#### 4. Run the chat app
+
+```sh
+$ make talkative-llama
+```
+
+**PS!** If you're having issues connecting to the `backend`, try running `make talkative-llama-host` instead.
+
+In your browser, open http://localhost:80
+
+**Enjoy!**
+
+<p align=\"center\">
+  <img src=\"https://github.com/Gayflix/talkative-llama/blob/main/docs/images/chat.png\" width=\"550\" \">
+</p>
